@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #3fa9f5;
+  --primary-dark: #2a84c7;
+  --bg-light: #f0f4f8;
+  --bg-dark: #121212;
+  --text-light: #1f1f1f;
+  --text-dark: #e0e0e0;
+  --border-light: #d0d0d0;
+  --border-dark: #2c2c2c;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+}
+
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode, html.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--bg-light);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .navbar {
+  background-color: var(--bg-dark);
+  border-color: var(--border-dark);
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.navbar a.active {
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #ff9800;
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    color: #ffc107;
+  }
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+
+  .theme-toggle {
+    color: #90caf9;
+
+    &:hover {
+      color: #64b5f6;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

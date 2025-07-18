@@ -2,11 +2,12 @@
   "name": "pomodoro-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "start:electron": "ng build && npm run build:electron && electron dist-electron/electron-main.js"
   },
   "prettier": {
     "overrides": [
@@ -25,8 +26,12 @@
     "@angular/core": "^20.1.0",
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
-    "@angular/router": "^20.1.0",
+    "@angular/router": "^20.1.2",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "chart.js": "^4.5.0",
+    "ng2-charts": "^8.0.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.22.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -35,6 +40,7 @@
     "@angular/cli": "^20.1.1",
     "@angular/compiler-cli": "^20.1.0",
     "@types/jasmine": "~5.1.0",
+    "electron": "^37.2.3",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
