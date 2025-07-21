@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "build": "ng build --base-href ./",
+    "watch": "ng build --base-href ./ --watch --configuration development",
     "test": "ng test",
     "build:electron": "tsc -p tsconfig.electron.json",
-    "start:electron": "ng build && npm run build:electron && electron dist-electron/electron-main.js"
+    "start:electron": "ng build --base-href ./ && npm run build:electron && electron dist-electron/electron-main.js"
   },
   "prettier": {
     "overrides": [

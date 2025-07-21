@@ -13,7 +13,7 @@ function createWindow(): void {
     },
   });
 
-  const indexPath = path.join(__dirname, 'dist', 'pomodoro-app', 'index.html');
+  const indexPath = path.join(__dirname, '..', 'dist', 'pomodoro-app', 'browser', 'index.html');
   mainWindow.loadFile(indexPath);
 
   mainWindow.on('closed', () => {
