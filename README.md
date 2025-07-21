@@ -37,10 +37,11 @@ cd Pomodoro-Timer
 To start a local development server, run:
 
 ```bash
-ng serve
+npm install
+npm run start:electron
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+✅ The app window should open automatically once the build completes.
 
 ## Code scaffolding
 
@@ -61,7 +62,7 @@ ng generate --help
 To build the project run:
 
 ```bash
-ng build
+npm build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
@@ -100,7 +101,7 @@ Styling: CSS Grid/Flexbox, global theming (dark/light mode)
 
 State Management: Component-level (no global state library)
 
-Routing: Single page (no Angular routing used)
+Routing: 2 different views
 
 ## ⚠️ Known Limitations
 No persistent storage of task list or timer sessions (can be added with localStorage or a backend).
